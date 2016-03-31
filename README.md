@@ -58,6 +58,7 @@ class Point2D {
   }
 }
 ```
+
 ### Conflicting Constructors
 
 At least conflicting constructor arguments is a syntax error. Having both forms in the same class might also need to be a syntax error.
@@ -78,6 +79,28 @@ Static methods can be interleaved within this scope but they don't have access t
 class Point2D (x, y) {
   static compare(a, b) {
     return x; // syntax error?
+  }
+}
+```
+
+### Extends
+
+When the class extends another one, the parenthesis have to go before the extends since otherwise it would be ambiguos with a function call.
+
+```js
+class Point3D (x, y, z) extends Point2D {
+  #z = z;
+}
+```
+
+Desugars to:
+
+```js
+class Point3D extends Point2D {
+  #z;
+  constructor(...args) {
+    super(...args);
+    this.#z = args[2];
   }
 }
 ```
