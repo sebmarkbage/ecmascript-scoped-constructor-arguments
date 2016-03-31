@@ -47,14 +47,17 @@ Pseudo-desugaring to [private fields](https://zenparsing.github.io/es-private-fi
 
 ```js
 class Point2D {
-  #x;
-  #y;
+  #_desugared_x;
+  #_desugared_y;
   constructor(x, y) {
-    this.#x = x;
-    this.#y = y;
+    this.#_desugared_x = x;
+    this.#_desugared_y = y;
   }
   measure() {
-    return Math.sqrt(this.#x * this.#x + this.#y * this.#y);
+    return Math.sqrt(
+      this.#_desugared_x * this.#_desugared_x +
+      this.#_desugared_y * this.#_desugared_y
+    );
   }
 }
 ```
