@@ -1,7 +1,7 @@
 Scoped Constructor Arguments for ECMAScript Classes
 ---------------------------------------------------
 
-The proposed [Class Instance Fields](https://github.com/jeffmo/es-class-fields-and-static-properties) leaves one question open: How do you create constant fields with access to constructor arguments.
+The proposed [Class Instance Fields](https://github.com/jeffmo/es-class-fields-and-static-properties) leaves one question open: How do you create constant fields with access to constructor arguments?
 
 This is an idea for a syntactical feature that can address this.
 
